@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8sq4e61l5ja4"]
+
+[sub_resource type="SystemFont" id="SystemFont_ednw0"]
+font_names = PackedStringArray("Book Antiqua")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_ysa22"]
+default_font = SubResource("SystemFont_ednw0")
+
+[node name="NoteReader3" type="Control"]
+auto_translate_mode = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 294.0
+offset_bottom = 164.0
+
+[node name="ColorRect3" type="ColorRect" parent="PanelContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+color = Color(0.775063, 0.775063, 0.775063, 0.921569)
+
+[node name="Label3" type="Label" parent="PanelContainer/ColorRect3"]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 9.0
+offset_right = 126.0
+offset_bottom = 196.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_ysa22")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "?????
+I can't believe I let myself get captured by that weak
+imbecile. I don't know how long it's been but I can feel
+my mind slipping away. He has stripped me down to
+nothing. I pray for the day I can see the outside and taste the fresh air. I must complete my quest.
+
+Press Tab to cancel"
+autowrap_mode = 2

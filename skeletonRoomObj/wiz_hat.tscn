@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ecoy7t036oq"]
+
+[ext_resource type="PackedScene" uid="uid://cc6ckslqhw48l" path="res://skeletonRoomObj/WizHat.glb" id="1_7o41p"]
+
+[node name="WizHat" instance=ExtResource("1_7o41p")]

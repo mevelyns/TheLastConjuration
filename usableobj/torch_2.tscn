@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://daa7oyemrtwvc"]
+
+[ext_resource type="PackedScene" uid="uid://cslss1eh81qm5" path="res://usableobj/torch.glb" id="1_rjdfb"]
+[ext_resource type="Texture2D" uid="uid://5582a8jrn5hc" path="res://usableobj/firepng.png" id="2_f2c1h"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mjvli"]
+data = PackedVector3Array(0.0658, 1, -0.0638, -0.1367, 1, 0.1497, -0.1367, 1, -0.0638, 0.0658, 1, -0.0638, 0.0658, 1, 0.1497, -0.1367, 1, 0.1497, 0.0658, 0.7134, 0.1497, -0.1367, 1, 0.1497, 0.0658, 1, 0.1497, 0.0658, 0.7134, 0.1497, -0.1367, 0.7134, 0.1497, -0.1367, 1, 0.1497, -0.1367, 0.7134, 0.1497, -0.1367, 1, -0.0638, -0.1367, 1, 0.1497, -0.1367, 0.7134, 0.1497, -0.1367, 0.7134, -0.0638, -0.1367, 1, -0.0638, -0.1367, -0.1048, -0.0638, 0.0658, -0.1048, 0.1497, 0.0658, -0.1048, -0.0638, -0.1367, -0.1048, -0.0638, -0.1367, -0.1048, 0.1497, 0.0658, -0.1048, 0.1497, 0.0658, 0.7134, -0.0638, 0.0658, 1, 0.1497, 0.0658, 1, -0.0638, 0.0658, 0.7134, -0.0638, 0.0658, 0.7134, 0.1497, 0.0658, 1, 0.1497, -0.1367, 0.7134, -0.0638, 0.0658, 1, -0.0638, -0.1367, 1, -0.0638, -0.1367, 0.7134, -0.0638, 0.0658, 0.7134, -0.0638, 0.0658, 1, -0.0638, -0.1367, -0.1048, -0.0638, 0.0658, 0.7134, -0.0638, -0.1367, 0.7134, -0.0638, -0.1367, -0.1048, -0.0638, 0.0658, -0.1048, -0.0638, 0.0658, 0.7134, -0.0638, 0.0658, -0.1048, -0.0638, 0.0658, 0.7134, 0.1497, 0.0658, 0.7134, -0.0638, 0.0658, -0.1048, -0.0638, 0.0658, -0.1048, 0.1497, 0.0658, 0.7134, 0.1497, -0.1367, -0.1048, 0.1497, -0.1367, 0.7134, -0.0638, -0.1367, 0.7134, 0.1497, -0.1367, -0.1048, 0.1497, -0.1367, -0.1048, -0.0638, -0.1367, 0.7134, -0.0638, 0.0658, -0.1048, 0.1497, -0.1367, 0.7134, 0.1497, 0.0658, 0.7134, 0.1497, 0.0658, -0.1048, 0.1497, -0.1367, -0.1048, 0.1497, -0.1367, 0.7134, 0.1497)
+
+[sub_resource type="Gradient" id="Gradient_rapk7"]
+offsets = PackedFloat32Array(0, 0.987805)
+colors = PackedColorArray(1, 0.827451, 0.0941176, 1, 1, 0.309804, 0.0235294, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ehx1v"]
+gradient = SubResource("Gradient_rapk7")
+
+[sub_resource type="Curve" id="Curve_8ajxm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.490099, 0.577358), 0.0, 0.0, 0, 0, Vector2(0.985148, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_swtp1"]
+curve = SubResource("Curve_8ajxm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2kha6"]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_swtp1")
+color_ramp = SubResource("GradientTexture1D_ehx1v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st1jf"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_f2c1h")
+texture_filter = 0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_4ymct"]
+material = SubResource("StandardMaterial3D_st1jf")
+
+[node name="torch2" instance=ExtResource("1_rjdfb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="torch" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="torch/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_mjvli")
+
+[node name="flames" type="GPUParticles3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0581915, 0.925858, 0.0622423)
+amount = 5
+visibility_aabb = AABB(-4, -3.58471, -4, 8, 7.16942, 8)
+process_material = SubResource("ParticleProcessMaterial_2kha6")
+draw_pass_1 = SubResource("QuadMesh_4ymct")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.922133, 0)
+light_color = Color(0.901961, 0.898039, 0, 1)
+distance_fade_enabled = true
+omni_range = 1.59596

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ktisivm4lfju"]
+
+[ext_resource type="Texture2D" uid="uid://d3bx77xvesh16" path="res://usableobj/splatterwine10011.png" id="1_6t3av"]
+
+[node name="Sprite3D" type="Sprite3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.0016371, 0.199993, 0, -0.199993, 0.0016371, 0, 0, 0)
+texture = ExtResource("1_6t3av")

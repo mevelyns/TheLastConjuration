@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3krncqt7k6uk"]
+
+[sub_resource type="SystemFont" id="SystemFont_t7b1o"]
+font_names = PackedStringArray("Book Antiqua")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_te2ql"]
+default_font = SubResource("SystemFont_t7b1o")
+
+[node name="NoteReader4" type="Control"]
+auto_translate_mode = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+auto_translate_mode = 1
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 294.0
+offset_bottom = 206.0
+
+[node name="ColorRect4" type="ColorRect" parent="PanelContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+color = Color(0.775063, 0.775063, 0.775063, 0.921569)
+
+[node name="Label4" type="Label" parent="PanelContainer/ColorRect4"]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 9.0
+offset_right = 126.0
+offset_bottom = 196.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_te2ql")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "4/7/1567
+I had too much to drink again this evening... But not all is lost. I have been thinking of another method for summoning I wish to test on prisoner #500, my lucky number! All my previous attempts at conjuration have been failures. I do not wish to summon any more lesser demons. The next one will hopefully be my final one, the one who will be my slave.
+
+Press Tab to cancel"
+autowrap_mode = 2

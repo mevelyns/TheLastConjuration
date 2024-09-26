@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://v5256e28obpj"]
+
+[ext_resource type="Script" path="res://objects2/note.gd" id="1_fhugm"]
+[ext_resource type="Texture2D" uid="uid://c7x6ksjshgvp7" path="res://objects2/note.png" id="2_hb4r1"]
+[ext_resource type="Script" path="res://objects2/notetest2.gd" id="3_75cg5"]
+[ext_resource type="PackedScene" uid="uid://cfs2aibkf2u6q" path="res://objects2/note_reader.tscn" id="4_i7urm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_khkok"]
+
+[node name="Notetest2" type="Node3D"]
+script = ExtResource("1_fhugm")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.105535, 0.994416, 0, -0.994416, 0.105535, 0, 0, 0)
+texture = ExtResource("2_hb4r1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("3_75cg5")
+prompt_message = "Read"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_khkok")
+
+[node name="NoteReader" parent="." instance=ExtResource("4_i7urm")]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://26inr21vc1i8"]
+
+[ext_resource type="Texture2D" uid="uid://c7x6ksjshgvp7" path="res://objects2/note.png" id="1_2pnw0"]
+[ext_resource type="Script" path="res://objects2/note.gd" id="1_3slop"]
+[ext_resource type="Script" path="res://objects2/static_body_3d.gd" id="2_ad8ey"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1nln"]
+
+[sub_resource type="Animation" id="Animation_1plg7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_u657m"]
+resource_name = "closetxt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5moe7"]
+resource_name = "showtxt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8jjnk"]
+_data = {
+"RESET": SubResource("Animation_1plg7"),
+"closetxt": SubResource("Animation_u657m"),
+"showtxt": SubResource("Animation_5moe7")
+}
+
+[node name="Note" type="Node3D"]
+script = ExtResource("1_3slop")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 0.0388024, 1.19937, 0, -1.19937, 0.0388024, 0.0763673, 0, 0)
+texture = ExtResource("1_2pnw0")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Help"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0670226, 0, 0)
+script = ExtResource("2_ad8ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_e1nln")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8jjnk")
+}

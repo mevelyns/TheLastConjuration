@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://chtds57brlehf"]
+
+[ext_resource type="PackedScene" uid="uid://bkllu01ec4fdc" path="res://Monster/MonsterTestMain.glb" id="1_q6r5r"]
+
+[node name="MonsterTestCutscene" instance=ExtResource("1_q6r5r")]

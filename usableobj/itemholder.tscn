@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://m0ulsq8y23bq"]
+
+[ext_resource type="PackedScene" uid="uid://dysa4ftwxppnb" path="res://usableobj/itemholder.glb" id="1_88w8d"]
+[ext_resource type="Script" path="res://usableobj/wineholderbody.gd" id="2_u482f"]
+[ext_resource type="Script" path="res://scripts/peastilitem1.gd" id="3_70xed"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8d07l"]
+
+[node name="itemholder" instance=ExtResource("1_88w8d")]
+
+[node name="StaticBody3D" parent="itemholder" index="0"]
+script = ExtResource("2_u482f")
+
+[node name="itemholderarea" type="Area3D" parent="itemholder" index="1"]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 1.02639, 0)
+script = ExtResource("3_70xed")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="itemholder/itemholderarea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0353568, 0)
+shape = SubResource("SphereShape3D_8d07l")

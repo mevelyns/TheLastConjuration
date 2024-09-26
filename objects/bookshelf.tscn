@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfrt0w7e58ehu"]
+
+[ext_resource type="PackedScene" uid="uid://dcp58tle14kq5" path="res://objects/bookshelf.glb" id="1_jpouy"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1jpay"]
+data = PackedVector3Array(1, 1, -1, -1, 1, -0.354, -1, 1, -1, 1, 1, -1, 1, 1, -0.354, -1, 1, -0.354, 1, -1, -0.354, -1, 1, -0.354, 1, 1, -0.354, 1, -1, -0.354, -1, -1, -0.354, -1, 1, -0.354, -1, -1, -0.354, -1, 1, -1, -1, 1, -0.354, -1, -1, -0.354, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -0.354, 1, -1, -1, -1, -1, -1, -1, -1, -0.354, 1, -1, -0.354, 1, -1, -1, 1, 1, -0.354, 1, 1, -1, 1, -1, -1, 1, -1, -0.354, 1, 1, -0.354, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1)
+
+[node name="bookshelf" instance=ExtResource("1_jpouy")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_1jpay")

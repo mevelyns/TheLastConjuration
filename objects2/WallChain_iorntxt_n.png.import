@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b83cwpd6irb2e"
+path.s3tc="res://.godot/imported/WallChain_iorntxt_n.png-63a75ea541f0571409cd5f9055f26b6d.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d4467adf44611287e672269b4e9a524b"
+}
+
+[deps]
+
+source_file="res://objects2/WallChain_iorntxt_n.png"
+dest_files=["res://.godot/imported/WallChain_iorntxt_n.png-63a75ea541f0571409cd5f9055f26b6d.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://objects2/WallChain_iorntxt_n.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

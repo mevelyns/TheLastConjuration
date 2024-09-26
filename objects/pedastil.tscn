@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://gi18ijx8q4kl"]
+
+[ext_resource type="PackedScene" uid="uid://cy5kkedpr0von" path="res://objects/pedastil.glb" id="1_fi2bw"]
+[ext_resource type="Script" path="res://objects/pedastil_area.gd" id="2_6i1og"]
+[ext_resource type="Script" path="res://objects/pedastilbody.gd" id="2_bry8n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ph7og"]
+
+[node name="pedastil" instance=ExtResource("1_fi2bw")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="pedastil" parent="." index="0"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.976771, 0)
+
+[node name="StaticBody3D" parent="pedastil" index="0"]
+script = ExtResource("2_bry8n")
+
+[node name="pedastilArea" type="Area3D" parent="pedastil" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.800942, 1.35252, -0.880759)
+script = ExtResource("2_6i1og")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pedastil/pedastilArea" index="0"]
+shape = SubResource("BoxShape3D_ph7og")

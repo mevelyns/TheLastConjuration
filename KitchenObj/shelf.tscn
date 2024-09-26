@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://drwc8m37iwv5s"]
+
+[ext_resource type="PackedScene" uid="uid://8tcvmbylpw8l" path="res://KitchenObj/shelf.glb" id="1_162mi"]
+
+[node name="shelf" instance=ExtResource("1_162mi")]

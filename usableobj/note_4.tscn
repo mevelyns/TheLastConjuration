@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkc20rtq1esxj"]
+
+[ext_resource type="Texture2D" uid="uid://c7x6ksjshgvp7" path="res://objects2/note.png" id="1_f0013"]
+[ext_resource type="Script" path="res://usableobj/static_body_3d.gd" id="2_q1nrj"]
+[ext_resource type="PackedScene" uid="uid://b3krncqt7k6uk" path="res://usableobj/note_reader_4.tscn" id="3_txlgu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g44qv"]
+
+[node name="Note4" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.105535, 0.994416, 0, -0.994416, 0.105535, 0, 0, 0)
+texture = ExtResource("1_f0013")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("2_q1nrj")
+prompt_message = "Read"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_g44qv")
+
+[node name="NoteReader4" parent="." instance=ExtResource("3_txlgu")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -118.5
+offset_right = 160.0
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
